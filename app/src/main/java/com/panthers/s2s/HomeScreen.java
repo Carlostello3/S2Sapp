@@ -6,7 +6,6 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
-import android.location.Location;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Build;
@@ -22,25 +21,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
-import androidx.fragment.app.FragmentActivity;
-
-import com.google.android.gms.location.FusedLocationProviderClient;
-import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.onesignal.OneSignal;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseUser;
-import java.util.ArrayList;
 
 
 
@@ -56,9 +46,9 @@ public class HomeScreen extends AppCompatActivity implements OnMapReadyCallback 
     private NotificationManagerCompat notificationManagerCompat;
     MapView mapView;
     private static final String MAPVIEW_BUNDLE_KEY = "MapViewBundleKey";
-    Location currentLocation;
-    FusedLocationProviderClient fusedLocationProviderClient;
-    private static final int REQUEST_CODE = 101;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,9 +75,6 @@ public class HomeScreen extends AppCompatActivity implements OnMapReadyCallback 
         notificationManagerCompat = NotificationManagerCompat.from(getApplicationContext());
 
         //Map settings
-
-        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
-        fetchLastLocation();
 
         Bundle mapViewBundle = null;
         if (savedInstanceState != null) {
@@ -215,21 +202,6 @@ public class HomeScreen extends AppCompatActivity implements OnMapReadyCallback 
     }
 
     //Map settings
-    private void fetchLastLocation() {
-        Task<Location> task = fusedLocationProviderClient.getLastLocation();
-        task.addOnSuccessListener(new OnSuccessListener<Location>() {
-            @Override
-            public void onSuccess(Location location) {
-                if(location != null){
-                    currentLocation = location;
-                    Toast.makeText(getApplicationContext(), currentLocation.getLatitude()+""+currentLocation.getLongitude(), Toast.LENGTH_SHORT).show();
-                    SupportMapFragment supportMapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.mapView);
-                    supportMapFragment.getMapAsync(HomeScreen.this);
-                }
-            }
-        });
-    }
-
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
@@ -265,7 +237,6 @@ public class HomeScreen extends AppCompatActivity implements OnMapReadyCallback 
     public void onMapReady(GoogleMap map) {
         LatLng latLng = new LatLng(28.5383, -81.3792);
         MarkerOptions markerOptions = new MarkerOptions().position(latLng).title("Orlando, FL");
-
         map.animateCamera(CameraUpdateFactory.newLatLng(latLng));
         map.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 12));
         map.addMarker(markerOptions);
