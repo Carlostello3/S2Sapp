@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1037220983377",
+    "firebase_url": "https://soldiers2scholars-627b1.firebaseio.com",
+    "project_id": "soldiers2scholars-627b1",
+    "storage_bucket": "soldiers2scholars-627b1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1037220983377:android:6313094fbb8072fda77e70",
+        "android_client_info": {
+          "package_name": "com.panthers.s2s"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1037220983377-mdklnjobs1mnc3pi1jgmf6uubd4hq4b0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.panthers.s2s",
+            "certificate_hash": "0e030f1bf74d82a9fb274b749e452317514970b6"
+          }
+        },
+        {
+          "client_id": "1037220983377-mnrlqfjk0at30j6dcvrio7thqpocljst.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmnHhmxPnEr5XR79THzVrId2h3vBlSBH4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1037220983377-mnrlqfjk0at30j6dcvrio7thqpocljst.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

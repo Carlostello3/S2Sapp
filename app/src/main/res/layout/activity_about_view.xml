@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AboutView"
+    android:background="@drawable/gradient1">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
+        />
+
+    <TextView
+        android:id="@+id/titleUs"
+        android:layout_width="138dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="44dp"
+        android:text="Our Story"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.201"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <TextView
+        android:id="@+id/textContent"
+        android:layout_width="311dp"
+        android:layout_height="395dp"
+        android:layout_marginTop="20dp"
+        android:text="Dr. Reddick (Founder of STS) recognized the importance of education and family values are needed by inner city children. \nWe know children learn by example from the people around them. \n\nThe examples of successful people they see are often those with criminal backgrounds,
+drug dealers, pimps, thieves, and their associates. \n\nWithout positive role models to help shape their minds it is easy to see where the influences
+around them can lead. \n\nOur military veterans and participants demonstrate positive attributes and skills. \nThey can affect the children in a positive
+way by serving as a role model, mentor, and contribute to the development of a positive environment for these children. They will be helping these
+at risk children to become better students and citizens."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleUs" />
+
+    <Button
+        android:id="@+id/buttonWebsite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Visit our website"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textContent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
